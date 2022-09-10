@@ -1,6 +1,10 @@
 # SlowGreeter
 
-**TODO: Add description**
+A sample app to demonstrate Elixir v1.14's new [`PartitionSupervisor`](https://hexdocs.pm/elixir/main/PartitionSupervisor.html). To run the demo:
+
+```
+mix run lib/benchmark.exs
+```
 
 ## Installation
 
@@ -18,4 +22,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/slow_greeter>.
-
