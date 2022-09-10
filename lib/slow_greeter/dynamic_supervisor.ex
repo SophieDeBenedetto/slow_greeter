@@ -12,7 +12,7 @@ defmodule SlowGreeter.DynamicSupervisor do
   end
 
   def start_greeter(name) do
-    spec = %{id: Worker, start: {Worker, :start_link, [name]}}
+    spec = %{id: Worker, start: {Worker, :start_link, [%{name: name, from: "DynamicSupervisor"}]}}
     DynamicSupervisor.start_child(__MODULE__, spec)
   end
 end

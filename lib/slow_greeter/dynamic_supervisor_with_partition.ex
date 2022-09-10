@@ -12,7 +12,7 @@ defmodule SlowGreeter.DynamicSupervisorWithPartition do
   end
 
   def start_greeter(name) do
-    spec = %{id: Worker, start: {Worker, :start_link, [name]}}
+    spec = %{id: Worker, start: {Worker, :start_link, [%{name: name, from: "PartitionSupervisor"}]}}
 
     DynamicSupervisor.start_child(
       {:via, PartitionSupervisor, {__MODULE__, self()}},
